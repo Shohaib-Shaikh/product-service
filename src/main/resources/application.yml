@@ -4,23 +4,17 @@ server:
 spring:
   application:
     name: PRODUCT-SERVICE
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
   datasource:
+    platform: postgres
     url: jdbc:postgresql://localhost:5432/project
     username: postgres
-    password: root
-    driver-class-name: org.postgresql.Driver
-  jpa:
-    properties:
-      hibernate:
-        ddl-auto: update
-        show_sql: true
-        naming:
-          physical-startegy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-          implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
-        jdbc:
-          lob:
-            non_contextual_creation: true
-          time_zone: UTC
+    password: postgres
+    driverClassName: org.postgresql.Driver
 
 eureka:
   client:
