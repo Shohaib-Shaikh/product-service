@@ -1,5 +1,5 @@
 server:
-  port: 8085
+  port: 9095
 
 spring:
   application:
@@ -11,9 +11,9 @@ spring:
       ddl-auto: update
   datasource:
     platform: postgres
-    url: jdbc:postgresql://localhost:5432/project
+    url: jdbc:postgresql://localhost:5432/demo
     username: postgres
-    password: postgres
+    password: root
     driverClassName: org.postgresql.Driver
 
 eureka:
