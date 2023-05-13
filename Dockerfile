@@ -5,10 +5,10 @@ FROM openjdk:11
 LABEL maintainer="shohaibxshaikh@gmail.com"
 
 RUN mkdir -p /opt/project
-ADD target/product-service.jar /opt/vocare
+ADD target/product-service.jar /opt/project
 WORKDIR /opt/project
 
-# Make port 8081 available to the world outside this container
+# Make port 9095 available to the world outside this container
 EXPOSE 9095
 
 ENTRYPOINT java -jar product-service.jar
