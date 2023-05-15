@@ -7,7 +7,7 @@ import com.project.product.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.PostConstruct;
+import java.util.List;
 
 @RestController
 @RequestMapping(ConstantUrlHelper.PRODUCT_URL)
@@ -26,9 +26,15 @@ public class ProductController {
         return productService.getUserServiceMessage();
     }
 
-    @PostMapping("/create")
+    @PostMapping(ConstantUrlHelper.CREATE_URL)
     public Product createEntity(@RequestBody Product product){
             return productService.createProduct(product);
+    }
+
+
+    @GetMapping("/list")
+    public List<Product> getList(){
+        return productService.getList();
     }
 
 }

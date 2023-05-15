@@ -2,10 +2,13 @@ package com.project.product.service.Impl;
 
 import com.project.product.client.UserClient;
 import com.project.product.entities.Product;
+//import com.project.product.repository.ProductRepository;
 import com.project.product.repository.ProductRepository;
 import com.project.product.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -29,7 +32,13 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product createProduct(Product product) {
-        return productRepository.save(product);
+        Product save = productRepository.save(product);
+        return save;
+    }
+
+    @Override
+    public List<Product> getList() {
+        return productRepository.findAll();
     }
 
 
